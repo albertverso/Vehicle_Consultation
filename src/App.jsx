@@ -3,7 +3,7 @@ import AppRouter from './Router';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
         <AppRouter />
     </BrowserRouter>
   )
