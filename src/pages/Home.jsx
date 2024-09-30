@@ -1,8 +1,8 @@
-import { useRef, useState } from "react";
-import { RiRoadsterFill } from "react-icons/ri";
+import { useState } from "react";
 import { sendImage } from "../services/vehicleService";
 import Modal from "../components/Modal";
 import { RiLoopRightFill } from 'react-icons/ri';
+import plate from '../assets/plate.png';
 
 export default function Home() {
     const [file, setFile] = useState(null);
@@ -69,19 +69,20 @@ export default function Home() {
     return (
         <div className="flex flex-col w-full h-screen justify-center items-center bg-white">
             <form onSubmit={handleSubmit} className="text-center flex flex-col items-center justify-center">
-                <p className="text-2xl font-bold mb-4">Consultar Placa Veicular</p>
-                <label className="cursor-pointer flex flex-col items-center justify-center w-32">
+                <p className="text-2xl font-bold">Consultar Placa Veicular</p>
+                <label className="cursor-pointer flex flex-col items-center justify-center w-56">
                     <input type="file" accept="image/*" className="sr-only" onChange={handleFileChange} />
-                    <RiRoadsterFill
+                    {/* <RiRoadsterFill
                         className={`transform transition-transform duration-300 hover:text-red-600 hover:scale-125 ${
                         isImageSelected ? 'text-red-500 scale-125' : 'text-gray-500'
                         }`}
                         size={100}
-                    />
+                    /> */}
+                    <img src={plate} alt="" className="transform transition-transform duration-300 hover:scale-110"/>
                 </label>
                 <button
                 type="submit"
-                className="mt-10 outline-none w-[150px] bg-gray-700 text-white py-2 px-4 rounded flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
+                className="outline-none mt-5 w-[150px] bg-gray-700 text-white py-2 px-4 rounded flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
                 disabled={loading}
                 >
                     {loading ? <RiLoopRightFill className="animate-spin" size={24} /> : 'Buscar'}

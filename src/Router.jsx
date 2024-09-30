@@ -2,7 +2,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/Home'
 import { useEffect, useState } from 'react';
 import { loadingApi } from './services/apiService';
-import animation from '/animation.webm';
+import animation from '/animation.gif';
+import { RiLoopRightFill } from "react-icons/ri";
 
 export default function AppRouter() {
     const [loading, setLoading] = useState(true); // Estado de loading
@@ -23,12 +24,14 @@ export default function AppRouter() {
         <div className="h-full">
             {loading ? 
             <div className="flex flex-col items-center justify-center h-screen">
-                <video autoPlay loop muted className="w-64 h-64">
+                {/* <video autoPlay loop muted className="w-64 h-64">
                     <source src={animation} type="video/webm" />
                     Seu navegador não suporta o vídeo.
-                </video>    
-                <div className="flex flex-col items-center justify-center font-semibold text-red-600">
+                </video> */}
+                <img src={animation} alt="" width={500} />    
+                <div className="flex flex-col items-center justify-center font-semibold text-2xl gap-2">
                     <p>Carregando</p>
+                    <RiLoopRightFill className="animate-spin" size={24} />
                     <p>Por favor, aguarde...</p>
                 </div>
            </div>
