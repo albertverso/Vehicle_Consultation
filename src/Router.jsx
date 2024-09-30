@@ -1,10 +1,33 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/Home'
+import { useEffect, useState } from 'react';
+import { loadingApi } from './services/apiService';
+import Animation from './assets/animation.webm';
 
 export default function AppRouter() {
+    const [loading, setLoading] = useState(true); // Estado de loading
+
+    useEffect(() => {
+      const wakeUpApi = async () => {
+          const response = await loadingApi();
+          if (response.status === 200) {
+            setLoading(true); // Quando a API responder, o loading é desativado
+          }
+      };
+  
+      wakeUpApi(); // Chama a função que acorda a API
+    }, []);
    
     return (
         <div className="h-full">
+            {loading ? 
+             <div className="flex items-center justify-center h-screen">
+                <video autoPlay loop muted className="w-64 h-64">
+                    <source src={Animation} type="video/webm" />
+                    Seu navegador não suporta o vídeo.
+                </video>
+           </div>
+            : 
             <Routes>
                 <Route path="/consultar-veiculos/" element={<Navigate to="/Home" />} />
                 <Route path="/" element={<Navigate to="/Home" />}></Route>
@@ -15,6 +38,7 @@ export default function AppRouter() {
                     }
                 />
             </Routes>
+            }
         </div>
     )
 }
