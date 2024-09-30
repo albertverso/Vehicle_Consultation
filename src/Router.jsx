@@ -11,7 +11,7 @@ export default function AppRouter() {
       const wakeUpApi = async () => {
           const response = await loadingApi();
           if (response.status === 200) {
-            setLoading(true); // Quando a API responder, o loading é desativado
+            setLoading(false); // Quando a API responder, o loading é desativado
           }
       };
   
@@ -21,11 +21,15 @@ export default function AppRouter() {
     return (
         <div className="h-full">
             {loading ? 
-             <div className="flex items-center justify-center h-screen">
+            <div className="flex flex-col items-center justify-center h-screen">
                 <video autoPlay loop muted className="w-64 h-64">
                     <source src={Animation} type="video/webm" />
                     Seu navegador não suporta o vídeo.
-                </video>
+                </video>    
+                <div className="flex flex-col items-center justify-center font-semibold text-red-600">
+                    <p>Carregando</p>
+                    <p>Por favor, aguarde...</p>
+                </div>
            </div>
             : 
             <Routes>
