@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Home from './pages/Home'
 import { useEffect, useState } from 'react';
 import { loadingApi } from './services/apiService';
-import Animation from './assets/animation.webm';
+import Animation from '../assets/animation.webm';
 
 export default function AppRouter() {
     const [loading, setLoading] = useState(true); // Estado de loading
