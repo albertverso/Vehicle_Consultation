@@ -21,7 +21,7 @@ export default function AppRouter() {
     }, []);
    
     return (
-        <div className="h-full">
+        <div className="h-full bg-white">
             {loading ? 
             <div className="flex flex-col items-center justify-center h-screen">
                 {/* <video autoPlay loop muted className="w-64 h-64">
