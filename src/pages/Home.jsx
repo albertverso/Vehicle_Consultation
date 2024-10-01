@@ -69,7 +69,7 @@ export default function Home() {
     return (
         <div className="flex flex-col w-full h-screen justify-center items-center bg-white">
             <form onSubmit={handleSubmit} className="text-center flex flex-col items-center justify-center">
-                <p className="text-2xl font-bold">Consultar Placa Veicular</p>
+                <p className="text-2xl mb-10 font-bold">Consultar Placa Veicular</p>
                 <label className="cursor-pointer flex flex-col items-center justify-center w-56">
                     <input type="file" accept="image/*" className="sr-only" onChange={handleFileChange} />
                     {/* <RiRoadsterFill
@@ -78,11 +78,11 @@ export default function Home() {
                         }`}
                         size={100}
                     /> */}
-                    <img src={plate} alt="" className="transform transition-transform duration-300 hover:scale-110"/>
+                    <img src={plate} alt="" className={`transform transition-transform duration-300 hover:scale-110 ${isImageSelected && 'scale-110'}`}/>
                 </label>
                 <button
                 type="submit"
-                className="outline-none mt-5 w-[150px] bg-gray-700 text-white py-2 px-4 rounded flex items-center justify-center hover:bg-blue-600 transition-colors duration-300"
+                className="outline-none mt-10 w-[150px] font-semibold bg-blue-600 text-white py-2 px-4 rounded flex items-center justify-center hover:bg-blue-900 transition-colors duration-300"
                 disabled={loading}
                 >
                     {loading ? <RiLoopRightFill className="animate-spin" size={24} /> : 'Buscar'}

@@ -21,7 +21,7 @@ const Modal = ({ isOpen, onClose, vehicleData }) => {
         )}
 
         <button 
-          className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300" 
+          className="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-900 transition-colors duration-300" 
           onClick={onClose}>
           Fechar
         </button>
