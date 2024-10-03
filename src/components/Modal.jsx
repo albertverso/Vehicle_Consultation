@@ -10,11 +10,11 @@ const Modal = ({ isOpen, onClose, vehicleData }) => {
 
         {vehicleData ? (
           <div>
-            <p><strong>Modelo:</strong> {vehicleData.modelo}</p>
-            <p><strong>Ano:</strong> {vehicleData.ano}</p>
-            <p><strong>Cor:</strong> {vehicleData.cor}</p>
-            <p><strong>Proprietário:</strong> {vehicleData.dono}</p>
-            <p><strong>Placa:</strong> {vehicleData.placa}</p>
+            <p><strong>Modelo:</strong> {vehicleData.model}</p>
+            <p><strong>Ano:</strong> {vehicleData.year}</p>
+            <p><strong>Cor:</strong> {vehicleData.color}</p>
+            <p><strong>Proprietário:</strong> {vehicleData.owner}</p>
+            <p><strong>Placa:</strong> {vehicleData.license_plate}</p>
           </div>
         ) : (
           <p>Nenhum veículo encontrado.</p>
