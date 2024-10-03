@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { loadingApi } from './services/apiService';
 import animation from '/animation.gif';
 import { RiLoopRightFill } from "react-icons/ri";
+import Login from "./pages/Login";
 
 export default function AppRouter() {
     const [loading, setLoading] = useState(true); // Estado de loading
@@ -24,10 +25,6 @@ export default function AppRouter() {
         <div className="h-full bg-white">
             {loading ? 
             <div className="flex flex-col items-center justify-center h-screen">
-                {/* <video autoPlay loop muted className="w-64 h-64">
-                    <source src={animation} type="video/webm" />
-                    Seu navegador não suporta o vídeo.
-                </video> */}
                 <img src={animation} alt="" width={500} />    
                 <div className="flex flex-col items-center justify-center font-semibold text-2xl gap-2">
                     <p>Carregando</p>
@@ -45,6 +42,9 @@ export default function AppRouter() {
                             <Home/>
                     }
                 />
+                <Route path="Login" element={<Login />}>
+                    
+                </Route>
             </Routes>
             }
         </div>
