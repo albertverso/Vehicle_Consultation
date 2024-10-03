@@ -5,6 +5,8 @@ import { loadingApi } from './services/apiService';
 import animation from '/animation.gif';
 import { RiLoopRightFill } from "react-icons/ri";
 import Login from "./pages/Login";
+import Vehicle from "./pages/Vehicle";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 export default function AppRouter() {
     const [loading, setLoading] = useState(true); // Estado de loading
@@ -42,9 +44,12 @@ export default function AppRouter() {
                             <Home/>
                     }
                 />
-                <Route path="Login" element={<Login />}>
-                    
-                </Route>
+                <Route path="Login" element={<Login />} />    
+                <Route path="Vehicle" element={
+                    <ProtectedRoute>
+                        <Vehicle />
+                    </ProtectedRoute>
+                    }/>
             </Routes>
             }
         </div>

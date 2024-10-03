@@ -72,7 +72,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full h-screen justify-center items-center bg-white">
       <form onSubmit={handleSubmit} className="text-center flex flex-col items-center justify-center">
-        <p className="text-2xl mb-10 font-bold">Consultar Placa Veicular</p>
+        <p className="text-2xl mb-10 font-bold">CONSULTAR PLACA VEICULAR</p>
         <label className="cursor-pointer flex flex-col items-center justify-center w-56">
           <input type="file" accept="image/*" className="sr-only" onChange={handleFileChange} />
           <img src={plate} alt="" className={`transform transition-transform duration-300 hover:scale-110 ${isImageSelected && 'scale-110'}`} />
