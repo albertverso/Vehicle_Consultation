@@ -31,8 +31,10 @@
 
 ## Instalação e Execução
 - Pré-requisitos
-1 - Node.js (versão 14 ou superior)
-2 - Gerenciador de pacotes npm ou yarn
+  <br/>
+ 1 - Node.js (versão 14 ou superior)
+  <br/>
+ 2 - Gerenciador de pacotes npm ou yarn
   
 ## Passos
 - Clone o repositório:
