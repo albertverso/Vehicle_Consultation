@@ -30,11 +30,11 @@ export default function Vehicle() {
         setLoading(true);
         setErrorMessage('');
         try {
-            const data = await addedVehicle(licencePlate, model, color, year, owner, token);
-            if (data.status === 409) {
+            const response = await addedVehicle(licencePlate, model, color, year, owner, token);
+            if (response.status === 409) {
                 setErrorMessage("Placa ja existente!");
             }
-            if (data.status === 200 && isAuthenticated) {
+            else if (response.status === 201 && isAuthenticated) {
                 resetInputs()
                 setIsOpen(true);
                 navigate('/Vehicle');
